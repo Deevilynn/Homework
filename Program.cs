@@ -24,9 +24,9 @@
 
 int Progression (int m, int n)
 {
-int results = 0;
-int min;
-int max;
+    int results = 0;
+    int min;
+    int max;
 
 if (m < 1 && n < 1) 
 {
@@ -35,21 +35,26 @@ if (m < 1 && n < 1)
 
 else 
 
-{ if (m > n) 
+{ 
+    if (m > n) 
+    {
+    max = m;
+    min = n;
+    }
+
+else 
 {
-max = m;
-min = n;
-}
-else {
-max = n;
-min = m;
+    max = n;
+    min = m;
 }
 
-if (max > 0 && min < 0 ){
-min = 1;
+if (max > 0 && min < 0 )
+{
+    min = 1;
 }
 
-for (int i = 0; i < (max - min + 1); i++) 
+int count = max - min + 1;
+for (int i = 0; i < count; i++) 
 {
 results = results + (min + i);
 }
@@ -57,6 +62,7 @@ results = results + (min + i);
 
 return results;
 }
+
 
 Console.WriteLine("Введите число M");
 int m = Convert.ToInt32(Console.ReadLine());
